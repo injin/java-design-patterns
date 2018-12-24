@@ -1,3 +1,0 @@
-month=9
-year=2018
-day=8
