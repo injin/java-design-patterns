@@ -1,7 +1,7 @@
 package objectAdapter;
 
-import classAdapter.Print;
-import classAdapter.PrintBanner;
+import objectAdapter.Print;
+import objectAdapter.PrintBanner;
 
 public class Main {
 
