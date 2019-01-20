@@ -11,28 +11,28 @@
 
 
 ## 자바 디자인 패턴
-**1. iterator**  
+**1. Iterator**  
 순서를 지정해서 처리하기  
 무엇인가 많이 모여있는 것들을 순서대로 지정하면서 젗체를 검색하는 처리를 실행
   
-**2. classAdapter**  
+**2. ClassAdapter**  
 상속을 사용한 Adapter 패턴  
 '이미 제공되어 있는 것'과 필요한 것' 사이의 '차이'를 없앰  
 인터페이스 호환성 문제 때문에 같이 쓸 수 없는 클래스들을 연결해서 쓸 수 있다
 
-**3. objectAdapter**  
+**3. ObjectAdapter**  
 위임을 사용한 Adapter 패턴  
 
-**4. template method**  
+**4.Template Method**  
 하위 클래스에서 구체적으로 처리하기
 
-**5. factory method**  
+**5. Factory Method**  
 하위 클래스에서 인스턴스 작성하기
 
-**6. singleton**  
+**6. Singleton**  
 인스턴스를 한 개만 만들기
 
-**7. prototype**  
+**7. Prototype**  
 복사해서 인스턴스 만들기  
 인스턴스를 생성하는 것이 아니라 인스턴스로부터 별도의 인스턴스를 만드는 패턴  
 이럴 때 사용!  
@@ -40,6 +40,10 @@
 2) 클래스로부터 인스턴스 생성이 어려운 경우  
 3) framework와 생성할 인스턴스를 분리하고 싶은 경우
 
+
+**8. Builder**  
+객체를 생성할 때 흔히 사용되는 패턴 - [[참조]](https://johngrib.github.io/wiki/builder-pattern/)  
+각 인자가 어떤 의미인지 알기 쉽고 setter 메서드가 없으므로 변경 불가능한 객체를 만들 수 있다.
 
 
 
