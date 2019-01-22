@@ -45,5 +45,10 @@
 객체를 생성할 때 흔히 사용되는 패턴 - [[참조]](https://johngrib.github.io/wiki/builder-pattern/)  
 각 인자가 어떤 의미인지 알기 쉽고 setter 메서드가 없으므로 변경 불가능한 객체를 만들 수 있다.
 
+**9. Abstract Factory**
+관련 부품을 조합해서 제품 만들기  
+여러 종류의 객체를 생성할 때 객체들 사이의 관련성이 있는 경우 사용  
+부품별로 Factory 클래스를 만드는 대신 제조업체별로 Factory 클래스를 만들 수 있다. - [[참조]](https://gmlwjd9405.github.io/2018/08/08/abstract-factory-pattern.html)  
+사용예) SqlSessionFactory
 
 
