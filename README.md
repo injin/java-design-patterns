@@ -51,4 +51,9 @@
 부품별로 Factory 클래스를 만드는 대신 제조업체별로 Factory 클래스를 만들 수 있다. - [[참조]](https://gmlwjd9405.github.io/2018/08/08/abstract-factory-pattern.html)  
 사용예) SqlSessionFactory
 
+**10. Bridge**
+기능 계층과 구현 계층 분리하기  
+분리하여 각각의 클래스 계층을 독립적으로 확장할 수 있다.  
+상속은 견고한 연결이고 위임은 느슨한 연결이다.  
+
 
