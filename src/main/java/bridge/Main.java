@@ -12,3 +12,8 @@ public class Main {
         d3.multiDisplay(5);
     }
 }
+
+/* 
+ * 기능의 클래스(Display, CountDisplay)
+ * 구현의 클래스(DisplayImpl, StringDisplayImpl)
+ */
