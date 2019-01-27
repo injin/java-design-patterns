@@ -36,6 +36,7 @@ public class Main {
             Park.add(new File("junk.mail", 500));
             rootdir.printList();
             
+            
         } catch (FileTreatmentException e) {
             e.printStackTrace();
         }

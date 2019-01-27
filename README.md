@@ -50,7 +50,7 @@
 관련 부품을 조합해서 제품 만들기  
 여러 종류의 객체를 생성할 때 객체들 사이의 관련성이 있는 경우 사용  
 부품별로 Factory 클래스를 만드는 대신 제조업체별로 Factory 클래스를 만들 수 있다. - [[참조]](https://gmlwjd9405.github.io/2018/08/08/abstract-factory-pattern.html)  
-사용예) SqlSessionFactory
+예) SqlSessionFactory
 
 **10. Bridge**  
 기능 계층과 구현 계층 분리하기  
@@ -65,4 +65,8 @@
 그릇과 내용물을 동일시해서 재귀적인 구조를 만들기 위한 패턴  
 예) 디렉터리와 파일은 서로 다르지만 모두 '디렉터리 안에 넣을 수 있는것' => '디렉터리 엔트리'
 
+**13. Decorator**  
+장식과 내용물을 동일시하기  
+오브젝트에 장식을 해 나가는 디자인 패턴  
+예) BufferedReader
 

@@ -2,6 +2,7 @@ package composite;
 
 public abstract class Entry {
     
+    protected Entry parent;
     public abstract String getName();
     public abstract int getSize();
     
@@ -19,4 +20,13 @@ public abstract class Entry {
         return getName() + " (" + getSize() + ")";
     }
     
+    public String getFullName() {
+        StringBuffer fullname = new StringBuffer();
+        Entry entry = this;
+        do {
+            fullname.insert(0, "/" + entry.getName());
+            entry = entry.parent;
+        } while(entry != null);
+        return fullname.toString();
+    }
 }
