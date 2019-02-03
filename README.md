@@ -95,5 +95,6 @@ Mediator는 쌍방향이지만 Facade는 단방향
 Mediator 패턴에서도 상태변화를 알리지만, 그것은 Colleague 역할의 조정이라는 목적으로 동작  
 Observer 패턴에서는 Subject 역할의 상태변화를 Observer 역할에게 알려 동기화를 이루는 일에 주안점을 둔다.
 
-
+**19. Memento**  
+상태를 저장하기  
 
