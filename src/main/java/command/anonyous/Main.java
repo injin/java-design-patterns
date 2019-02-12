@@ -1,5 +1,6 @@
 package command.anonyous;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -10,10 +11,12 @@ import java.awt.event.WindowListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 
 import command.command.Command;
 import command.command.MacroCommand;
+import command.drawer.ColorCommand;
 import command.drawer.DrawCanvas;
 import command.drawer.DrawCommand;
 
@@ -27,6 +30,9 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
     private DrawCanvas canvas = new DrawCanvas(400, 400, history);
     // 제거 버튼
     private JButton clearButton = new JButton("clear");
+    // 컬러 선택 버튼
+    private JButton colorButton = new JButton("color");
+    
     
     public Main(String title) {
         super(title);
@@ -34,9 +40,11 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         this.addWindowListener(this);
         canvas.addMouseMotionListener(this);
         clearButton.addActionListener(this);
+        colorButton.addActionListener(this);
         
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
+        buttonBox.add(colorButton);
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);
@@ -51,6 +59,13 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         if (e.getSource() == clearButton) {
             history.clear();
             canvas.repaint();
+        } else if (e.getSource() == colorButton) {
+            Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.RED);
+            if (newColor != null) {
+                Command cmd = new ColorCommand(canvas, newColor);
+                history.append(cmd);
+                cmd.execute();
+            }
         }
     }
     

@@ -10,14 +10,15 @@ public class DrawCanvas extends Canvas implements Drawable {
 
     private static final long serialVersionUID = 1L;
     
-    private Color color = Color.red;
-    private int radius = 6;
+    private Color color;
+    private int radius;
     private MacroCommand history;
     
     public DrawCanvas(int width, int height, MacroCommand history) {
         setSize(width, height);
         setBackground(Color.white);
         this.history = history;
+        init();
     }
     
     // 이력 전체를 다시 그리기
@@ -26,10 +27,21 @@ public class DrawCanvas extends Canvas implements Drawable {
     }
     
     @Override
+    public void init() {
+        color = Color.red;
+        radius = 6;
+    }
+    
+    @Override
     public void draw(int x, int y) {
         Graphics g = getGraphics();
         g.setColor(color);
         g.fillOval(x-radius, y-radius, radius*2, radius*2);
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
     }
 
 }
