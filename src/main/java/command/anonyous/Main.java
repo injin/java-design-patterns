@@ -16,7 +16,6 @@ import javax.swing.JFrame;
 
 import command.command.Command;
 import command.command.MacroCommand;
-import command.drawer.ColorCommand;
 import command.drawer.DrawCanvas;
 import command.drawer.DrawCommand;
 
@@ -32,6 +31,8 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
     private JButton clearButton = new JButton("clear");
     // 컬러 선택 버튼
     private JButton colorButton = new JButton("color");
+    // 취소 버튼
+    private JButton undoButton = new JButton("undo");
     
     
     public Main(String title) {
@@ -41,10 +42,12 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         canvas.addMouseMotionListener(this);
         clearButton.addActionListener(this);
         colorButton.addActionListener(this);
+        undoButton.addActionListener(this);
         
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
         buttonBox.add(colorButton);
+        buttonBox.add(undoButton);
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);
@@ -62,10 +65,11 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         } else if (e.getSource() == colorButton) {
             Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.RED);
             if (newColor != null) {
-                Command cmd = new ColorCommand(canvas, newColor);
-                history.append(cmd);
-                cmd.execute();
+                canvas.setCurrentColor(newColor);
             }
+        } else if (e.getSource() == undoButton) {
+            history.undo();
+            canvas.repaint();
         }
     }
     
